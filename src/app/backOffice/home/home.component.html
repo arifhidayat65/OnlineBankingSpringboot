@@ -1,0 +1,34 @@
+<div class="sidebar">
+  <a> Dashboard </a>
+  <a (click)="batchShow()"> Batch </a>
+  <a (click)="mappingShow()" > Mapping </a>
+  <a (click)="materialShow()"> Material </a>
+  <a (click)="trainerShow()"> Trainer </a>
+  <a (click)="studentShow()"> Student </a>
+  <a (click)="scheduleShow()"> schedule </a>
+</div>
+
+<div class="content">
+  <div *ngIf="home">
+    homeee
+  </div>
+  <div *ngIf="batch">
+    <app-batch></app-batch>
+  </div>
+  <div *ngIf="material">
+    <app-material></app-material>
+  </div>
+  <div *ngIf="mapping">
+    <app-mapping></app-mapping>
+  </div>
+  <div *ngIf="studenet">
+    <app-student></app-student>
+  </div>
+  <div *ngIf="trainer">
+    <app-trainer></app-trainer>
+  </div>
+  <div *ngIf="schedule">
+    <app-schedule></app-schedule>
+  </div>
+
+</div>

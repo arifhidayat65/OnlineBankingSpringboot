@@ -1,0 +1,121 @@
+<div class="card">
+  <div class="card-header" style="color: aliceblue;">
+    list Batch
+  </div>
+  <div class="card-body">
+    <div style="padding-right: 0%; margin-right: 0px;">
+      <button type="button" class="btn btn-outline-success"  data-toggle="modal" data-target="#exampleModalCenter">Add Trainer</button> <br><br>
+    </div>
+    <table class="table table-condensed">
+      <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <!-- <th>Batch</th> -->
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let st of trainer; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>{{ st.name }}</td>
+        <td>{{ st.gender }}</td>
+        <td>{{ st.placeOb }} / {{st.birthDate | date:'longDate'}} </td>
+        <td>{{ st.address }}</td>
+        <td>{{ st.email }}</td>
+        <td>{{ st.phoneNumber }}</td>
+        <!-- <td>{{ st.batch }}</td> -->
+        <td><button class="btn btn-sm btn-danger">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <form [formGroup]="trainerFormGroup" (ngSubmit)="saveTrainer()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Name</label>
+              <input type="text" formControlName="name" class="form-control" id="name" placeholder="name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="username">Username</label>
+              <input type="text" formControlName="username" class="form-control" id="username" placeholder="Username">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <input type="email" formControlName="email" class="form-control" id="email" placeholder="email@mail.com">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="gender">Gender</label>
+              <select id="gender" class="form-control" formControlName="gender">
+                <option selected>Choose...</option>
+                <option value="Male"> Male </option>
+                <option value="Female"> Female </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="place">Place Of Birth</label>
+              <input type="text" formControlName="place" class="form-control" id="place" placeholder="Place of birth">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="dob">Birth Date</label>
+              <input type="date" formControlName="date" class="form-control date-picker form-control col-md-7 col-xs-12" id="dobe">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" formControlName="address" class="form-control" id="inputAddress">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="password">Password</label>
+              <input type="password" formControlName="password" class="form-control" id="password">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="retype">Re Type Password</label>
+              <input type="password" formControlName="retype" class="form-control" id="retype">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="phone">Phone Number</label>
+              <input type="text" formControlName="phone" class="form-control" id="phone">
+            </div>
+            <div class="form-group col-md-6">
+<!--              <label for="gender">Material</label>-->
+<!--              <select id="material" formControlName="material" class="form-control">-->
+<!--                <option selected>Choose...</option>-->
+<!--                <option *ngFor="let bt of material" [value]="bt.idMateri"> {{bt.description}} </option>-->
+<!--              </select>-->
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
