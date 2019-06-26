@@ -8,7 +8,7 @@ There are two roles user and admin.
 
 The admin has there own fronent implemented in Angular2, which communicates with backend through REST services.
 
-Link to the admin portal project: https://github.com/arifhidayat65/OnlineBankingSpringboot
+Link to the admin portal project: https://github.com/arifhidayat65/OnlineBankingSpringboot/tree/ui
 
 There is a sql dump with prepopulated data inside project folder. 
 The username and password for database: root
